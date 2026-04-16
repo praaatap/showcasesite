@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=cal-sans@1&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:        #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-muted:  #f4f4f5;
+  --surface:   #ffffff;
+  --border:    #e4e4e7;
+  --border-strong: #d1d5db;
+  --text-1:    #09090b;
+  --text-2:    #52525b;
+  --text-3:    #a1a1aa;
+  --accent:    #18181b;
+  --purple:    #7c3aed;
+  --purple-dim: rgba(124,58,237,0.08);
+  --green:     #16a34a;
+  --r:         10px;
+  --r-lg:      16px;
+  --r-xl:      22px;
+  --nav-h:     60px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Cal Sans','Inter',sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+::selection { background: var(--purple-dim); color: var(--purple); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+
+a { text-decoration: none; color: inherit; }
+
+.container    { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.container-sm { max-width: 720px;  margin: 0 auto; padding: 0 24px; }
+.mono { font-family: 'SF Mono','Fira Code','Cascadia Code',monospace; }
+
+/* ── SHOW / HIDE HELPERS ── */
+.hide-mobile    { display: flex; }
+.show-mobile    { display: none !important; }
+.show-mobile-flex { display: none; }
+
+@media (max-width: 768px) {
+  .container, .container-sm { padding: 0 16px; }
+  .hide-mobile  { display: none !important; }
+  .show-mobile  { display: block !important; }
+  .show-mobile-flex { display: flex !important; }
+}
+
+@media (max-width: 480px) {
+  .container, .container-sm { padding: 0 14px; }
+}
